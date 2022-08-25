@@ -1,0 +1,453 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>js学习 | 檀香花园</title><meta name="author" content="hongguojing"><meta name="copyright" content="hongguojing"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js学习">
+<meta property="og:url" content="http://gongguojing@github.io/2022/08/25/js/index.html">
+<meta property="og:site_name" content="檀香花园">
+<meta property="og:description" content="学习">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://gongguojing@github.io/img/qiubilong1.jpg">
+<meta property="article:published_time" content="2022-08-25T15:56:16.473Z">
+<meta property="article:modified_time" content="2022-08-25T16:57:37.922Z">
+<meta property="article:author" content="hongguojing">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://gongguojing@github.io/img/qiubilong1.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://gongguojing@github.io/2022/08/25/js/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'js学习',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-08-26 00:57:37'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/./img/qiubilong1.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">檀香花园</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">js学习</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-08-25T15:56:16.473Z" title="发表于 2022-08-25 23:56:16">2022-08-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-25T16:57:37.922Z" title="更新于 2022-08-26 00:57:37">2022-08-26</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="js学习"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><div id="content_views" class="markdown_views prism-atom-one-light">
+                    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                        <path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+                    </svg>
+                    <h1><a name="t0"></a><a id="JS_0"></a>JS基础</h1> 
+<h2><a name="t1"></a><a id="js_2"></a>js介绍</h2> 
+<h3><a name="t2"></a><a id="_4"></a>一门脚本语言</h3> 
+<h3><a name="t3"></a><a id="_6"></a>组成</h3> 
+<ul><li> <p><a href="https://so.csdn.net/so/search?q=ECMAScript&amp;spm=1001.2101.3001.7020" target="_blank" class="hl hl-1" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.7020&quot;,&quot;dest&quot;:&quot;https://so.csdn.net/so/search?q=ECMAScript&amp;spm=1001.2101.3001.7020&quot;,&quot;extra&quot;:&quot;{\&quot;searchword\&quot;:\&quot;ECMAScript\&quot;}&quot;}" data-tit="ECMAScript" data-pretit="ecmascript">ECMAScript</a></p> 
+  <ul><li>简称ES,ES5,ES6</li><li>js语法规范</li></ul> </li><li> <p>DOM</p> 
+  <ul><li>文档对象模型</li><li>操作页面内容</li></ul> </li><li> <p>BOM</p> 
+  <ul><li>浏览器对象模型</li><li>操作浏览器功能</li></ul> </li></ul> 
+<h2><a name="t4"></a><a id="js_23"></a>js基础写法</h2> 
+<h3><a name="t5"></a><a id="_25"></a>三种书写方式</h3> 
+<ul><li> <p>内联</p> 
+  <ul><li>写在标签里面</li></ul> </li><li> <p>外联</p> 
+  <ul><li>js独立出来的文件</li><li>script配合src属性导入</li><li>注意：如果写了外联，那么在 <code>script</code> 标签里，就不要写其他JS代码，因为写了也没用</li></ul> </li><li> <p>行内（了解）</p> 
+  <ul><li>点我，告诉你黑马最帅的男人</li></ul> </li></ul> 
+<h3><a name="t6"></a><a id="js_41"></a>js注释</h3> 
+<ul><li> <p>// 单行</p> </li><li> <p>/* */ 多行注释</p> 
+  <ul><li>vs code 快捷键：shift+alt+a</li></ul> </li></ul> 
+<h3><a name="t7"></a><a id="js_48"></a>js输入输出语句</h3> 
+<ul><li> <p>alert(’ 提示内容 ')</p> 
+  <ul><li>弹出一个提示框</li></ul> </li><li> <p>prompt(‘提示用户输入内容’)</p> 
+  <ul><li>弹出一个输入框</li></ul> </li><li> <p>confrim(’ 提示用户内容’)</p> 
+  <ul><li>弹出一个确认框（使用少）</li></ul> </li></ul> 
+<h3><a name="t8"></a><a id="js_62"></a>js结束语</h3> 
+<ul><li> <p>；</p> 
+  <ul><li>英语分号</li></ul> </li><li> <p>什么也不写</p> 
+  <ul><li>需要单独一行</li></ul> </li></ul> 
+<h2><a name="t9"></a><a id="_72"></a>变量声明，赋值，使用</h2> 
+<h3><a name="t10"></a><a id="_74"></a>什么是变量？</h3> 
+<ul><li>可以理解为是一个装数据的容器</li></ul> 
+<h3><a name="t11"></a><a id="_78"></a>变量的声明</h3> 
+<ul><li>let 变量名</li><li>eg: let name</li></ul> 
+<h3><a name="t12"></a><a id="_83"></a>变量的赋值</h3> 
+<ul><li>变量名=数据</li><li>eg：name=‘刘德华’</li></ul> 
+<h3><a name="t13"></a><a id="_88"></a>变量的使用</h3> 
+<ul><li> <p>name</p> 
+  <ul><li>直接写变量名</li><li>eg: alert(name)</li><li>注：变量名你要加引号</li></ul> </li></ul> 
+<h3><a name="t14"></a><a id="_96"></a>变量初始化</h3> 
+<ul><li> <p>在声明变量时就赋值</p> 
+  <ul><li>let name=‘刘德华’</li></ul> </li></ul> 
+<h3><a name="t15"></a><a id="_102"></a>变量的本质</h3> 
+<ul><li>就是在内存中开辟一个空间，存放数据</li></ul> 
+<h3><a name="t16"></a><a id="_106"></a>变量细节补充</h3> 
+<ul><li> <p>同时声明多个变量并赋值</p> 
+  <ul><li>需要用逗号隔开</li><li>eg：let name = ‘jack’,age = 16</li></ul> </li><li> <p>如果变量只声明不赋值，那么值是undefined</p> 
+  <ul><li>风格let name alert(name) // undefined let name, age = 16 // 相当于写的是 let name let age = 16 alert(name) // undefined alert(age) // 16</li></ul> </li><li> <p>如果一个变量不声明，但是直接复制了，可以用，但是不推荐</p> 
+  <ul><li>age = 30 alert(age)</li></ul> </li></ul> 
+<h3><a name="t17"></a><a id="_121"></a>变量命名规则跟规范</h3> 
+<ul><li> <p>规则</p> 
+  <ul><li>不能用关键字</li><li>变量名只能由字母，数字，下划线，美元符号（$）组成，且数字不能开头</li></ul> </li><li> <p>规范</p> 
+  <ul><li> <p>起名要有意义，变量的名字跟保存的数据有关</p> </li><li> <p>要用驼峰命名法</p> 
+    <ul><li> <p>如果一个变量名由多个单词组成吗，那么第一个单词首字母小写，后面每个单词首字母大写</p> 
+      <ul><li>例：userName、 userLoginName</li></ul> </li></ul> </li></ul> </li></ul> 
+<h3><a name="t18"></a><a id="_137"></a>算术运算符</h3> 
+<ul><li> <p>+加</p> </li><li> <p>-减</p> </li><li> <p>*乘</p> </li><li> <p>/ 除</p> </li><li> <p>% 取余</p> </li><li> <p>优先级</p> 
+  <ul><li>先乘除后加减，有括号的先算括号里面的，同级就从左往右依次运算</li></ul> </li></ul> 
+<h3><a name="t19"></a><a id="documentwrite_148"></a>document.write</h3> 
+<ul><li> <p>给 body 内增加内容</p> </li><li> <p>如果内容带标签，会解析成html元素</p> 
+  <ul><li>document.write(‘<h3><a name="t20"></a>哈哈哈，我出现了</h3>’)</li></ul> </li></ul> 
+<h3><a name="t21"></a><a id="consolelog_155"></a>console.log</h3> 
+<ul><li>它主要是给程序员自己调试数据用的</li><li>在浏览器的f12 -&gt; Console 来显示</li><li>在控制台中，如果数据是字符串，则颜色为黑色</li></ul> 
+<h3><a name="t22"></a><a id="_161"></a>转义符</h3> 
+<ul><li> <p>符号：\ 可以把右边的符号转换原来的意义</p> </li><li> <p>有</p> 
+  <ul><li>\n`： 换行</li><li><code>\'</code>： 输出单引号</li><li><code>\"</code>： 输出双引号</li><li><code>\\</code> ： 输出\</li><li>…</li></ul> </li></ul> 
+<h3><a name="t23"></a><a id="_172"></a>模板字符串</h3> 
+<ul><li> <p><code></code> 反引号</p> </li><li> <p>好处</p> 
+  <ul><li>内容怎么写的，它就是怎么展示的</li><li>如果想输出变量的值，不用再拼接字符串，写$&#123;变量名&#125; 自动填充在里面</li></ul> </li></ul> 
+<h2><a name="t24"></a><a id="_180"></a>数据类型</h2> 
+<h3><a name="t25"></a><a id="_182"></a>数据类型</h3> 
+<ul><li> <p>Numbr</p> 
+  <ul><li>数值型</li><li>写法：直接写数字，例如：10,11,12， 10.32, 11.2, -0.3</li></ul> </li><li> <p>String</p> 
+  <ul><li>字符串型，用来表示文字的</li><li>写法:用单引号或双引号或反引号包起来的都是字符串</li></ul> </li><li> <p>Boolean</p> 
+  <ul><li>布尔类型</li><li>这种类型只有两个数据： true 与 false</li></ul> </li><li> <p>undefined</p> 
+  <ul><li>代表未定义</li><li>只有一个值就叫undefined</li></ul> </li></ul> 
+<h3><a name="t26"></a><a id="_204"></a>检测数据类型</h3> 
+<ul><li> <p>typeof 检测基本数据类型</p> 
+  <ul><li>检测数据类型是什么</li><li>用法：typeof 数据 typeof 变量名</li></ul> </li><li> <p>instanceof检测复杂数据类型</p> 
+  <ul><li> <p>可以判断一个数据是复杂数据类型的哪种</p> </li><li> <p>用法：</p> <p>数据 instanceof 构造函数</p> <p>数据 instanceof Array // 判断是否为数组<br> 数据 instanceof Function // 判断是否为函数<br> 数据 instanceof Date // 判断是否为日期对象<br> 数据 instanceof Object // 判断是否为对象（所有复杂数据类型本质都是对象）</p> </li><li> <p>如果是这个类型得到true，不是得到false</p> </li></ul> </li></ul> 
+<h3><a name="t27"></a><a id="_225"></a>数据类型转换</h3> 
+<ul><li> <p>介绍</p> 
+  <ul><li>把一种数据类型转换为另外一种数据类型</li></ul> </li><li> <p>隐式转换</p> 
+  <ul><li>不用额外写代码、程序自己根据一定的规则来转换成某种类型</li><li><code>+</code> 两边如果有一个是字符串，会把另外一个非字符串的也自动转换成字符串</li><li>除了<code>+</code>以外的所有算术运算符（-、*、/、%） 都会把别的类型转换成数字类型，如果无法得到数字的，会得到NaN</li><li>NaN：Not a Number 代表非数字，它也是number类型（数字类型）</li><li>它做任意数学运算得到的结果也一定是NaN-只要是数学运算都是转换成数字，但是如果是拼接就是转换成字符串</li><li>-缺点：需要记住这些规则，不太明显，增加了代码阅读难度</li></ul> </li><li> <p>显示转换</p> 
+  <ul><li> <p>转成字符串</p> 
+    <ul><li> <p>String(数据)</p> </li><li> <p>数据.toString()</p> 
+      <ul><li>toString 最好用在变量，否则会报错</li></ul> </li></ul> </li><li> <p>转成数字类型</p> 
+    <ul><li> <p>Number(数据)</p> 
+      <ul><li>整数小数都能转换</li><li>只要有一个是非数字，得到的都是NaN，两边有空格无所谓，中间有就不行</li></ul> </li><li> <p>parseInt(数据)</p> 
+      <ul><li>转换成整数，只会的到整数部分</li><li>从左往右依次转换，遇到非数字停止，有几个数字转换几个，若一个都没有得到NaN</li></ul> </li><li> <p>parseFloat(数据)</p> 
+      <ul><li>转换成小数或整数（数字是什么就的到什么）</li><li>原理效果跟parseInt一样的，也是从左往右依次转换</li></ul> </li><li> <p>快速转</p> 
+      <ul><li>直接在数据前面加+</li></ul> </li><li> <p>利用隐式转换</p> 
+      <ul><li>数据 - 0 或 数据 * 1 或者 数据 / 1</li></ul> </li><li> <p>补充</p> 
+      <ul><li>0不能作为除数，就是 / 右边的数，其他语言里会报错，JS里得到Infinity</li><li>Infinity代表无穷大，-Infinity代表无穷小</li></ul> </li></ul> </li><li></li></ul> </li></ul> 
+<h2><a name="t28"></a><a id="_281"></a>自增和自减</h2> 
+<h3><a name="t29"></a><a id="_283"></a>自增</h3> 
+<ul><li> <p>符号：++</p> 
+  <ul><li>就是让自己+1</li></ul> </li></ul> 
+<h3><a name="t30"></a><a id="_289"></a>自减</h3> 
+<ul><li> <p>符号：–</p> </li><li> <p>就是让自己-1</p> </li><li> <p>如果不参与运算，++（–）写在前或者写在后都一样</p> </li><li> <p>如果参与运算前缀和后缀就有区别：</p> <p>-前缀：先自增（自减），再用自增（自减）后的值参与运算</p> <p>后缀：先用原值参与运算，再自增（自减）</p> </li></ul> 
+<h2><a name="t31"></a><a id="_305"></a>比较运算符</h2> 
+<ul><li> <p><code>&gt;</code>：判断左边是否大于右边</p> </li><li> <p><code>&lt;</code>：判断左边是否小于右边</p> </li><li> <p><code>&gt;=</code>：判断左边是否大于或等于右边</p> </li><li> <p><code>&lt;=</code>：判断左边是否小于或等于右边</p> </li><li> <p><code>==</code>：判断左右两边是否相等，只判断值相等，不判断类型</p> </li><li> <p><code>===</code>：判断左右两边是否全等，既要值相等，也要类型相等</p> </li><li> <p><code>!=</code>：判断左右两边是否不等</p> </li><li> <p>得到的结果是布尔类型，也就是得到true或false</p> </li><li> <p>一定要区分：赋值就是一个 <code>=</code> 不要写成 <code>==</code> ，除非你要判断值是否相等才写成 <code>==</code></p> </li></ul> 
+<h2><a name="t32"></a><a id="_318"></a>逻辑运算符</h2> 
+<h3><a name="t33"></a><a id="_320"></a>&amp;&amp;：逻辑与</h3> 
+<ul><li>左右两边都是true，结果才是true，有一个是false结果就是false</li><li>口诀：一假则假</li></ul> 
+<h3><a name="t34"></a><a id="___325"></a>| | ：逻辑或</h3> 
+<ul><li>左右两边有一个是true结果就是true，两个是false结果才是false</li><li>-口诀：一真则真</li></ul> 
+<h3><a name="t35"></a><a id="__330"></a>！ ：逻辑非</h3> 
+<ul><li>true变false，false变true</li><li>真变假，假变真</li><li>它还有把别的数据类型转成布尔类型的特点</li></ul> 
+<h3><a name="t36"></a><a id="_336"></a>转换成布尔类型</h3> 
+<ul><li>Boolean(数据)</li><li>只有0、空字符串、NaN、undefined、null转成false，其他都是true</li></ul> 
+<h3><a name="t37"></a><a id="_341"></a>转换成布尔类型</h3> 
+<ul><li>Boolean(数据)</li><li>只有0、空字符串、NaN、undefined、null转成false，其他都是true</li></ul> 
+<h3><a name="t38"></a><a id="_346"></a>逻辑运算中的短路</h3> 
+<ul><li>指的不执行右边的式子</li><li>只存在于 &amp;&amp; 和 || 中有短路</li><li>当左边能确定整个式子结果，就没必要看右边了，所以发生了短路的现象（不执行右边的式子）</li><li>&amp;&amp;什么时候短路：在左边式子为false时短路</li><li>| | 什么时候短路： 在左边式子为true的时候短路</li></ul> 
+<h3><a name="t39"></a><a id="_354"></a>逻辑运算中的短路</h3> 
+<ul><li>指的不执行右边的式子</li><li>只存在于 &amp;&amp; 和 || 中有短路</li><li>当左边能确定整个式子结果，就没必要看右边了，所以发生了短路的现象（不执行右边的式子）</li><li>&amp;&amp;什么时候短路：在左边式子为false时短路</li><li>| | 什么时候短路： 在左边式子为true的时候短路</li></ul> 
+<h2><a name="t40"></a><a id="_362"></a>赋值运算符</h2> 
+<h3><a name="t41"></a><a id="_364"></a>=</h3> 
+<ul><li>代表把右边的值赋值给左边变量</li><li>他不是判断相等，判断相等是 <code>==</code></li></ul> 
+<h3><a name="t42"></a><a id="_369"></a><code>+=</code></h3> 
+<ul><li>在自己值的基础上再+一个值</li></ul> 
+<h3><a name="t43"></a><a id="_373"></a><code>-=</code></h3> 
+<ul><li>在自己值的基础上再-一个值</li></ul> 
+<h3><a name="t44"></a><a id="_377"></a><code>*=</code></h3> 
+<ul><li>在自己值的基础上再*一个值</li></ul> 
+<h3><a name="t45"></a><a id="_381"></a><code>/=</code></h3> 
+<ul><li>在自己值的基础上再/一个值</li></ul> 
+<h3><a name="t46"></a><a id="_385"></a><code>%=</code></h3> 
+<ul><li>在自己值的基础上再%一个值</li></ul> 
+<h2><a name="t47"></a><a id="_389"></a>程序结构</h2> 
+<h3><a name="t48"></a><a id="_391"></a>顺序结构</h3> 
+<ul><li> <p>程序从上往下依次执行</p> </li><li> <p>程序默认就是顺序结构</p> </li><li> <p>语法：if(条件) { 代码 }</p> 
+  <ul><li>当 if 小括号里的 条件 为 true 时，则执行大括号里的代码，如果为false就不执行大括号里的代码</li></ul> </li></ul> 
+<h3><a name="t49"></a><a id="_399"></a>分支结构</h3> 
+<ul><li> <p>分支语句之 if-else</p> 
+  <ul><li> <p>语法：if（条件）{ 代码 } else { 代码 }</p> 
+    <ul><li>如果条件满足，执行代码1，不满足就执行代码2</li><li>所以也就是说代码1和代码2，只会选择一个来执行</li></ul> </li><li> <p>这也可以称之为<code>双分支</code>语句</p> </li></ul> </li><li> <p>分支语句之if - else if - else</p> 
+  <ul><li>语法：if（条件1）{ 代码1 } else if（条件2）{ 代码2 } … else { 代码 }</li><li>先判断条件1，如果为true则执行代码1，如果为false则继续往下判断条件2，为true则执行代码2，为false则继续往下判断条件3，为true执行代码3，以此类推，如果上面条件都不满足就只执行else里的代码n</li></ul> </li><li> <p>分支语句之switch</p> 
+  <ul><li>switch也是多分支语句</li><li>语法：switch (数据) {case 值1: 代码1 break; case 值2: 代码2 break; … default: 代码n break;</li></ul> </li></ul> 
+<h3><a name="t50"></a><a id="_420"></a>循环结构</h3> 
+<ul><li> <p>whilex循环</p> 
+  <ul><li> <p>语法：while(循环条件) { 循环体 }</p> </li><li> <p>循环体：就是要重复执行的代码</p> </li><li> <p>语义： 判断循环条件是否为true，如果为true则执行循环体，否则跳出while循环</p> 
+    <ul><li>如果为true时执行完循环体，会又回到while的循环条件的位置，继续判断是否为true，以此类推</li></ul> </li><li> <p>一般情况下，我们需要一个变量来控制循环的次数，这个变量叫循环增量，所以我们一般会这样写</p> 
+    <ul><li>eg:let i = 0 while (i &lt; 次数) { 循环体 i++ }</li><li>想执行几次，就在次数那写几</li><li>切记：一定要写i++，因为如果不写会导致无限循环，这种我们称之为死循环</li></ul> </li></ul> </li><li> <p>do-while循环</p> 
+  <ul><li>语法：do { 循环体 }while( 循环条件)</li><li>先执行循环体，然后再判断循环条件，如果条件为true，回来继续执行循环体，那么如果为false，就跳出循环</li><li>do-while循环的循环体至少会执行1次</li><li>如果某个循环体，至少要执行1次的，那么就用do-while</li></ul> </li><li> <p>for循环</p> 
+  <ul><li> <p>语法： for(声明循环变量;循环条件;变量++ ) { 循环体 }</p> </li><li> <p>执行过程：</p> 
+    <ul><li>先执行声明循环变量，再判断循环条件是否为true，为true就执行循环体，为false就直接跳出循环</li><li>为true执行完循环体，会回到变量++的位置来做变量自增，自增完了再来判断循环条件，依次类推</li></ul> </li></ul> </li></ul> 
+<h3><a name="t51"></a><a id="breakcontinue_451"></a>break和continue</h3> 
+<ul><li> <p>break</p> 
+  <ul><li>结束所在的switch语句</li><li>结束所在的循环</li></ul> </li><li> <p>continue：</p> 
+  <ul><li>只能用在循环</li><li>结束当次循环，继续下次循环</li></ul> </li></ul> 
+<h3><a name="t52"></a><a id="_463"></a>循环嵌套</h3> 
+<ul><li>循环里面再写一个循环就叫循环的嵌套</li></ul> 
+<h2><a name="t53"></a><a id="_469"></a>相等的一些细节</h2> 
+<ul><li> <p>undefined == null 得到true</p> </li><li> <p>undefined === null 得到false</p> </li><li> <p>NaN 不等于任何数据，包括它自己</p> </li><li> <p>NaN == NaN 永远都是false</p> </li><li> <h3><a name="t54"></a><a id="NaN_479"></a>那么如何判断是否为NaN？</h3> </li><li> <p>isNaN(数据)</p> </li><li> <p>如果是NaN得到true</p> </li><li> <p>否则得到false</p> </li></ul> 
+<h2><a name="t55"></a><a id="_486"></a>数组</h2> 
+<h3><a name="t56"></a><a id="_488"></a>数组语法</h3> 
+<ul><li> <p>数组初始化</p> 
+  <ul><li>let 数组名 = [ 数据列表 ]</li><li>数据列表可以写任意个数据，如果多个数据用逗号隔开</li></ul> </li><li> <p>名词</p> 
+  <ul><li>元素：数组里保存的每个数据都叫数组元素</li><li>下标/索引：每个数据的编号，从0开始</li><li>长度：数组中数据的个数</li></ul> </li><li> <p>单独取出某个数组里的元素，该怎么取？</p> 
+  <ul><li> <p>用下标取</p> </li><li> <p>语法： 数组名[下标]</p> 
+    <ul><li>eg: nums[0]</li></ul> </li></ul> </li><li> <p>数组赋值</p> 
+  <ul><li> <p>也是通过下标重新赋值</p> </li><li> <p>语法是：数组名[下标] = 数据</p> 
+    <ul><li>eg : nums[0] = 999</li></ul> </li></ul> </li><li> <p>数组的最大下标 = 长度 - 1</p> </li></ul> 
+<h3><a name="t57"></a><a id="_517"></a>数组长度</h3> 
+<ul><li> <p>数组名.length</p> </li><li> <p>数组长度可以更改</p> 
+  <ul><li> <p>数组名.length++</p> 
+    <ul><li>则是在最后多一个元素，用undefined补齐</li></ul> </li><li> <p>数组名.length–</p> 
+    <ul><li>则相当于删除数组最后一个元素</li></ul> </li><li> <p>数组长度直接赋值，如果赋的值比原来的长度要大，相当于增加，增加部分用undefined补齐</p> </li><li> <p>数组长度直接复制，如果赋的值比原来的长度要小，相当于删除，减少几个就删除后面几个</p> </li></ul> </li></ul> 
+<h3><a name="t58"></a><a id="_533"></a>遍历数组</h3> 
+<ul><li>把数组中每个元素给取出来</li><li>语法：for (let i = 0; i &lt; 数组.length; i++){ 数组[i] }</li></ul> 
+<h3><a name="t59"></a><a id="_538"></a>动态添加数组</h3> 
+<ul><li>可以对数组原本不存在的下标进行赋值，那么它就会在这个下标位置增加数据</li><li>如果这个下标跟原本存数据的下标存在一段距离，那么这段距离会用undefined补齐</li><li>eg： 例：一个数组为let nums = [10,20, 30] 下标只到2， 但是如果我 nums[8] = 999 ，那么在下标8会多一个999，然后在下标3到下标7用undefined补齐</li></ul> 
+<h3><a name="t60"></a><a id="_544"></a>按顺序添加数组语法</h3> 
+<ul><li>数组名[数组名.length] = 数据</li><li>例：nums[nums.length] = 60</li></ul> 
+<h3><a name="t61"></a><a id="_549"></a>数组内置的方法</h3> 
+<ul><li> <p>数组本质也是一种对象，所以也有属性和方法</p> </li><li> <p>属性</p> 
+  <ul><li>数组.length</li></ul> </li><li> <p>方法：</p> 
+  <ul><li> <p>reverse() :反转数组</p> </li><li> <p>push()</p> 
+    <ul><li>在数组末尾添加元素</li><li>也可以一次性添加多个，用逗号隔开</li><li>返回值是新长度</li></ul> </li><li> <p>pop()</p> 
+    <ul><li>删除数组末尾的元素（一次只能删一个）</li><li>返回值就是被删除的元素</li></ul> </li><li> <p>unshift()</p> 
+    <ul><li>在数组第一个位置添加元素</li><li>也可以一次性添加多个，用逗号隔开</li><li>返回值是新长度</li></ul> </li><li> <p>shift()</p> 
+    <ul><li>删除数组的第一个元素</li><li>返回值是被删除的元素</li></ul> </li><li> <p>join()</p> 
+    <ul><li>把数组中每个元素用一个符号连接起来</li><li>如果什么都不传，默认是逗号隔开</li><li>如果传空字符串，那么每月任何隔开符，如果传空格字符串，用空格隔开</li><li>返回一个字符串</li></ul> </li></ul> </li></ul> 
+<h3><a name="t62"></a><a id="_588"></a>数组方法</h3> 
+<ul><li> <p>数组排序方法</p> 
+  <ul><li> <p>sort()</p> 
+    <ul><li> <p>默认是先比较第一位，再比较第二位，依次类推</p> </li><li> <p>如果比较字符，它会先把字符根据ASCII码转整数，小的前面，大的后面</p> </li><li> <p>按数字大小从小到大排列就传入函数</p> 
+      <ul><li> <p>eg:</p> <p>数组.sort( function (a,b) {</p> <p>return a - b<br> } )</p> </li></ul> </li><li> <p>按数字大小从大到小排列就传入函数</p> 
+      <ul><li> <p>eg:</p> <p>数组.sort( function (a,b) {</p> <p>return b - a<br> } )</p> </li></ul> </li></ul> </li></ul> </li><li> <p>数组splice</p> 
+  <ul><li> <p>删除</p> 
+    <ul><li> <p>splice(从哪个下标开始，删除几个)</p> 
+      <ul><li>splice(2,3) 代表下标2开始删，删除3个</li></ul> </li></ul> </li><li> <p>替换</p> 
+    <ul><li> <p>splice(从哪个下标开始，找几个，替换成什么)</p> 
+      <ul><li>splice(2,3,300) 下标2开始一共找3个，都只替换成一个300</li><li>替换多个，也是逗号隔开</li></ul> </li></ul> </li><li> <p>新增</p> 
+    <ul><li>splice(新增到哪个下标,0, 新增的内容)</li><li>如果要新增多个，则逗号隔开</li></ul> </li></ul> </li><li> <p>数组indexOf和lastIndexOf</p> 
+  <ul><li> <p>indexOf(数据)</p> 
+    <ul><li>从前往后找匹配的数据，返回找到的第一个的下标</li><li>如果不存在得到-1</li></ul> </li><li> <p>lastIndexOf（数据）</p> 
+    <ul><li>从后往前找匹配的数据</li><li>不存在也得到-1</li></ul> </li><li> <p>主要作用：判断数据在不在数组里面，如果不在得到-1，在就不等于-1</p> </li></ul> </li></ul> 
+<h3><a name="t63"></a><a id="_648"></a>字符串的内置方法</h3> 
+<ul><li> <p>indexOf和lastIndexOf</p> 
+  <ul><li>跟数组一样的效果</li><li>但是如果传入空字符串，则永远得到0</li></ul> </li><li> <p>字符串不可改！</p> 
+  <ul><li>所谓的不可改是它的内容不可改，不是说变量不能重新赋值</li><li>eg:</li></ul> </li><li> <p>spilt 切割</p> 
+  <ul><li> <p>把字符串按照某个符号切割为数组</p> </li><li> <p>eg:</p> <p>let str = ‘刘德华|张学友|郭富城|黎明’<br> // 我需要把字符串转成数组<br> let arr = str.split(’|’) // 按竖线分割字符串变成数组<br> console.log(arr)</p> </li><li> <p>如果传入不存在的字符，或者没传任何参数，那么会把字符串当做一个整体元素</p> </li><li> <p>如果传入空字符串，会把字符串的每个内容都当做一个元素</p> </li></ul> </li><li> <p>replace 替换</p> 
+  <ul><li>替换字符串</li><li>参数1：被替换的内容</li><li>参数2：替换的新内容</li><li>只会得到新的结果，不会直接改变原来的值</li></ul> </li><li> <p>toUpperCase() 转大写</p> </li><li> <p>toLowerCase() 转小写</p> </li><li> <p>trim () 取出两边的空格</p> </li></ul> 
+<h3><a name="t64"></a><a id="arguments_684"></a>arguments伪数组</h3> 
+<ul><li>arguments是一个伪数组，它里面保存了调用函数时传递过来的所有实参</li><li>arguments只能用在函数里</li><li>arguments作用：就是可以让函数的扩展性更强，因为可以让它传入任意个参数，我们都可以拿到并处理</li></ul> 
+<h2><a name="t65"></a><a id="_690"></a>函数</h2> 
+<h3><a name="t66"></a><a id="_692"></a>函数介绍</h3> 
+<ul><li>就是一种把代码封装起来的语法</li><li>作用：提高代码复用，便于维护与解决代码冗余</li></ul> 
+<h3><a name="t67"></a><a id="_697"></a>函数的基本使用</h3> 
+<ul><li> <p>声明</p> 
+  <ul><li> <p>function声明</p> 
+    <ul><li>语法1： function 函数名 （） { 函数体 }</li><li>用<code>function</code> 声明的函数，可以在声明之前调用</li></ul> </li><li> <p>表达式声明</p> 
+    <ul><li> <p>语法：let 变量名 = function 函数名 （） { 函数体 }</p> </li><li> <p>如果用这种方式声明的函数，不能再它声明之前调用</p> </li></ul> </li></ul> </li><li> <p>调用语法：函数名 ()</p> </li><li> <p>注：函数只声明不调用，里面代码不会被执行</p> </li></ul> 
+<h3><a name="t68"></a><a id="_715"></a>有参数的函数</h3> 
+<ul><li>有的时候函数完成某个功能需要外界传入数据，这时候就需要有参数的函数</li><li>语法：function 函数名 （ 参数列表） { 函数体 }</li><li>参数列表，就是定义需要几个数据，多个之间用逗号隔开</li></ul> 
+<h3><a name="t69"></a><a id="_721"></a>形参和实参</h3> 
+<ul><li> <p>形参</p> 
+  <ul><li>声明函数时写在小括号里的叫形参</li></ul> </li><li> <p>实参</p> 
+  <ul><li>调用函数时写在小括号里的叫实参</li></ul> </li></ul> 
+<h3><a name="t70"></a><a id="_731"></a>有返回值的函数</h3> 
+<ul><li> <p>为什么需要？</p> 
+  <ul><li>因为调用函数时会得到一个结果，而这个结果是调用者想要得到的，所以应该把这个结果返回给调用者</li></ul> </li><li> <p>语法： function 函数名 （ 参数列表） { 函数体 return 数据 }</p> </li><li> <p>可以返回变量值，也可以直接返回数据</p> </li></ul> 
+<h3><a name="t71"></a><a id="return_740"></a>return关键词</h3> 
+<ul><li>return后面可以直接写数据，也可以写变量（代表取出变量的值返回），也可以写表达式（算出表达式的结果再返回）</li><li>return有立即结束函数的作用，所以return后面的代码不会被执行</li><li>return后面也可以不加任何数据，也有返回值，只不过返回值是undefined</li><li>函数内也可以不写return，只不过这个时候函数的返回值就是undefined</li></ul> 
+<h3><a name="t72"></a><a id="_747"></a>注意</h3> 
+<ul><li>函数要想被调用，必须加小括号：函数名()</li><li>换句话说，只要加了小括号，都代表调用了这个函数</li><li>如果只是写函数名，不加小括号，不是调用，它只是代表找到这个函数里保存的代码</li></ul> 
+<h2><a name="t73"></a><a id="_753"></a>构造函数</h2> 
+<h3><a name="t74"></a><a id="_755"></a>工厂函数</h3> 
+<ul><li> <p>本质就是封装代码</p> </li><li> <p>封装创建对象的代码，因为我们发现每次创建同一种类型的对象代码都一样，所以可以封装成函数</p> </li><li> <p>那么这种函数就叫工厂函数</p> </li><li> <p>特点：函数内自己创建对象，自己返回对象，调用时不用写new</p> </li><li> <p>eg:</p> <p>function factory(name, age, sex) {</p> <p>// 现在我要创建2个对象，都有name、age、sex属性，和吃饭的行为<br> let p = {}</p> <p>// 左边是属性名，右边是变量名，到时候会取出变量名的值作为属性值<br> p.name = name<br> p.age = age<br> p.sex = sex<br> p.eat = function () {<br> console.log(‘吃啊吃啊，我骄傲放纵’)<br> }<br> return p<br> }</p> </li></ul> 
+<h3><a name="t75"></a><a id="_778"></a>构造函数</h3> 
+<ul><li> <p>实际上构造函数就是对工厂函数的升级</p> </li><li> <p>升级在：不用我们自己创建对象，也不用我们自己返回对象，利用this关键字访问到构造函数帮我们创建的对</p> </li><li> <p>注意：构造函数的函数名首字母大写，尽量用名词</p> </li><li> <p>eg:</p> <p>function Person(name, age, sex) {</p> <p>// 现在这个对象是构造函数帮我们创建的，所以不叫p了<br> // 访问创建的对象用this<br> this.name = name<br> this.age = age<br> this.sex = sex<br> this.eat = function () {<br> console.log(‘吃啊吃啊，我骄傲放纵’)<br> }<br> }</p> <p>let p1 = new Person(‘jack’,16,‘男’)</p> </li><li> <p>new关键字做的三件事：</p> 
+  <ul><li> 
+    <ol><li>创建了一个新的空对象</li></ol> </li><li> 
+    <ol start="2"><li>把函数内的this指向到这个新的空对象</li></ol> </li><li> 
+    <ol start="3"><li>在函数结束的时候返回这个新的对象</li></ol> </li></ul> </li><li> <p>构造函数创建数组和对象</p> 
+  <ul><li> <p>eg</p> <p>let arr = new Array()<br> let obj = new Object()<br> let f1 = new Function() //函数</p> </li></ul> </li></ul> 
+<h2><a name="t76"></a><a id="_813"></a>字面量概念</h2> 
+<ul><li>就是通过字面意思就能知道是什么数据类型</li><li>{}字面就是对象，[]字面就是数组</li></ul> 
+<h2><a name="t77"></a><a id="_818"></a>对象</h2> 
+<h3><a name="t78"></a><a id="_820"></a>什么是对象？</h3> 
+<ul><li>对象这种数据类型一般是用来用代码描述现实中的某个具体事物</li><li>对象也可以保存多个数据，并且取值时能很清晰的知道取的是什么</li><li>对象跟顺序无关，所以我们一般称对象是无序存储，而数组叫有序存储</li></ul> 
+<h3><a name="t79"></a><a id="_826"></a>对象初始化</h3> 
+<ul><li> <p>let 对象名 = { 属性名1 ：属性值1 … }</p> </li><li> <p>属性：对象拥有的特征</p> </li><li> <p>方法：对象</p> </li><li> <p>例：要用代码去表示一只猫</p> 
+  <ul><li>特征：昵称、年龄、品种…</li><li>行为：抓沙发</li></ul> </li></ul> 
+<h3><a name="t80"></a><a id="_836"></a>方法的说明</h3> 
+<ul><li>方法就是对象的行为</li><li>在代码中其本质是函数</li><li>所以函数可以有参数和返回值，方法也有，写法跟函数一样</li></ul> 
+<h3><a name="t81"></a><a id="_842"></a>对象赋值的细节</h3> 
+<ul><li>对象如果对一个已经存在的属性进行就是修改</li><li>如果对一个不存在的属性进行赋值，就是增加</li></ul> 
+<h3><a name="t82"></a><a id="_847"></a>对象取值</h3> 
+<ul><li> <p>对象如果访问一个不存在的属性，得到undefined</p> </li><li> <p>对象.属性名 这种形式叫点语法</p> 
+  <ul><li>永远不会找变量，就是找这个对象里的这个属性</li></ul> </li><li> <p>对象[字符串]</p> 
+  <ul><li>代表找字符串对应的整个属性</li></ul> </li><li> <p>对象[变量名]</p> 
+  <ul><li>代表先取出变量的值，变量值是什么就找什么属性</li></ul> </li></ul> 
+<h3><a name="t83"></a><a id="_862"></a>遍历对象</h3> 
+<ul><li>语法：for (let key in 对象名) { // 不一定要叫key,也可以叫别的，但是建议叫key或者 // key就是属性名，所以可以通过属性名访问属性值 对象名[key] }</li></ul> 
+<h2><a name="t84"></a><a id="_866"></a>内置对象</h2> 
+<h3><a name="t85"></a><a id="JS_868"></a>JS已经提供好的对象</h3> 
+<h3><a name="t86"></a><a id="Math_870"></a>Math对象</h3> 
+<ul><li> <p>这个对象表示的是一个数学高手</p> </li><li> <p>它可以做一些数学运算</p> </li><li> <p>Math.pow()： 幂运算（基本不用，了解）</p> </li><li> <p>Math.abs()：取绝对值</p> </li><li> <p>取整的方法：</p> 
+  <ul><li>Math.round()：- 四舍五入取整，本质是找离自己最近的整数，.5会取更大的整数</li><li>Math.floor()： 向下取整，得到的整数一定比原来的值要小</li><li>Math.ceil()：向上取整，得到的整数一定比原来的值要大</li><li>parseInt() ： 直接取整</li></ul> </li><li> <p>生成随机数</p> 
+  <ul><li> <p>Math.random() ： 生成 0 - 1之间的随机数，包括0，不包括1</p> </li><li> <p>如果要生成任意整数之间的随机数，</p> 
+    <ul><li>公式：Math.floor(Math.random() * ( 大 - 小 + 1)) + 小</li></ul> </li></ul> </li><li></li></ul> 
+<h2><a name="t87"></a><a id="_892"></a>日期对象</h2> 
+<h3><a name="t88"></a><a id="_894"></a>表示日期的对象</h3> 
+<h3><a name="t89"></a><a id="_896"></a>方法</h3> 
+<ul><li> <p>getFullYear()</p> 
+  <ul><li>获得年</li></ul> </li><li> <p>getMonth()</p> 
+  <ul><li>获得月，月从0开始</li></ul> </li><li> <p>getDate()</p> 
+  <ul><li>获得日期的日</li></ul> </li><li> <p>getDay()</p> 
+  <ul><li>获得星期几，星期天获得0，其他都是获得对应的数字</li></ul> </li><li> <p>getHours()</p> 
+  <ul><li>获得时</li></ul> </li><li> <p>getMinutes()</p> 
+  <ul><li>获得分</li></ul> </li><li> <p>getSeconds()</p> 
+  <ul><li>获得秒</li></ul> </li></ul> 
+<h3><a name="t90"></a><a id="_926"></a>日期对象创建时指定时间</h3> 
+<ul><li> <p>默认 new Date()什么都不传就获取当前时间</p> </li><li> <p>new Date() 如果依次传入年、月、日、时、分、秒，就是得到对应的时间，但是要注意传入0得到1月，传入1得到2月</p> <p>let time1 = new Date(1990, 0, 1, 12, 32, 45)<br> console.log(time1.getFullYear(), time1.getMonth(), time1.getDate())<br> console.log(time1)</p> </li><li> <p>new Date() 如果传入一个字符串时间，就是得到字符串内容的时间，更加精确</p> <p>let time2 = new Date(‘1990-2-1 12:32:45’)<br> console.log(time2)</p> </li></ul> 
+<h3><a name="t91"></a><a id="_940"></a>时间戳</h3> 
+<ul><li> <p>时间戳获取的是自 1970年1月1日0点0分0秒 到现在过了多少毫秒</p> </li><li> <p>怎么获取？</p> 
+  <ul><li> <p>构造函数获取</p> 
+    <ul><li>Date.now()</li></ul> </li><li> <p>使用实例化的日期对象来获取</p> 
+    <ul><li>对象.getTime()</li><li>把 对象 转成 number 类型就能获取</li></ul> </li><li> <p>通过时间戳可以得到指定日期</p> </li></ul> </li><li> <p>利用时间戳计算</p> 
+  <ul><li> <p>公式总结如下</p> <p>天 = parseInt (总毫秒 / (1000 * 60 * 60 * 24))</p> <p>总毫秒 = 总毫秒 % (1000 * 60 * 60 * 24) // 得到剩余毫秒</p> <p>时 = parseInt ( 总毫秒 / (1000 * 60 * 60) )</p> <p>总毫秒 = 总毫秒 % (1000 * 60 * 60 ) // 得到剩余毫秒</p> <p>分 = parseInt ( 总毫秒 / (1000 * 60) )</p> <p>总毫秒 = 总毫秒 % (1000 * 60 * 60 ) // 得到剩余毫秒</p> <p>秒 = parseInt ( 总毫秒 / 1000 )</p> </li><li> <p>代码如下：</p> </li></ul> </li></ul> 
+<h2><a name="t92"></a><a id="_976"></a>作用域</h2> 
+<h3><a name="t93"></a><a id="_978"></a>全局作用域</h3> 
+<ul><li>从 <code>script</code> 开头到 <code>script</code> 结尾的区域</li></ul> 
+<h3><a name="t94"></a><a id="_982"></a>局部作用域</h3> 
+<ul><li>只有函数会开辟局部作用域，函数内的就叫局部作用域</li></ul> 
+<h3><a name="t95"></a><a id="_986"></a>块作用域</h3> 
+<ul><li>任何 {} 都叫 块作用域，但是只有 let 声明的变量才区分块作用域，var只有全局和局部</li></ul> 
+<h3><a name="t96"></a><a id="_990"></a>全局变量</h3> 
+<ul><li>在全局作用域里声明的变量叫全局变量</li><li>任意范围可以访问</li></ul> 
+<h3><a name="t97"></a><a id="_995"></a>局部变量</h3> 
+<ul><li>在函数内声明的变量叫局部变量</li><li>只有这个函数内可以访问</li></ul> 
+<h3><a name="t98"></a><a id="_1000"></a>块变量</h3> 
+<ul><li>在<code>&#123;&#125;</code>里用let声明的变量叫块变量，只能在这个大括号里访问</li><li>var不存在块作用域，只有let存在</li><li>eg:</li></ul> 
+<h3><a name="t99"></a><a id="_1006"></a>作用域链</h3> 
+<ul><li>只有函数可以开辟作用域</li><li>默认也有作用域叫 <code>全局作用域</code> ，我们也称之为0级作用域</li><li>如果在0级作用域里声明一个函数，那么这个函数开辟的作用域就叫1级作用域</li><li>如果在1级作用域里又声明一个函数，那么这个函数开辟的作用域就叫2级作用域</li><li>练习：</li></ul> 
+<h3><a name="t100"></a><a id="_1014"></a>预解析以及声明的提升</h3> 
+<ul><li>练习</li></ul> 
+<h3><a name="t101"></a><a id="let__var__1018"></a>let 和 var 的异同总结</h3> 
+<ul><li> <p>相同点：都是声明变量</p> </li><li> <p>不同点</p> 
+  <ul><li>let只认块，也就是 <code>&#123;&#125;</code> ，在哪个大括号里声明，就只能在这个大括号里使用</li><li>var认作用域，所以var里会分0级、1级、2级，还要注意，只有function才可以开辟作用域</li><li>var参与预解析时的变量提升，而let不参与</li><li>let在同一个块里不能声明同名变量，var无所谓</li></ul> </li></ul> 
+<h3><a name="t102"></a><a id="_1028"></a>回调函数，自执行函数</h3> 
+<ul><li> <p>回调函数</p> 
+  <ul><li>函数A当做参数传递给另外一个函数B，那么函数A就叫回调函数</li></ul> </li><li> <p>自执行函数</p> 
+  <ul><li> <p>写法</p> <p>😭 function () {</p> <p>}) () // 常用的</p> <p>😭 function () {</p> <p>}()) // 不太常用的</p> </li><li> <p>记住：自执行函数前面记得加分号，不加可能报错</p> </li></ul> </li><li> <p>作用：开辟新的作用域，避免变量冲突</p> </li></ul>
+                </div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://gongguojing@github.io">hongguojing</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://gongguojing@github.io/2022/08/25/js/">http://gongguojing@github.io/2022/08/25/js/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://gongguojing@github.io" target="_blank">檀香花园</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/./img/qiubilong1.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/08/24/%E4%BB%A3%E7%A0%81%E5%9D%97/%E6%BC%94%E7%A4%BA/"><img class="next-cover" src="/./img/hs.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">代码块演示</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">hongguojing</div><div class="author-info__description">随心想，随笔记</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/hongguojing" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#content_views"><span class="toc-number">1.</span> <span class="toc-text">JS基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-number">1.1.</span> <span class="toc-text">js介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.1.1.</span> <span class="toc-text">一门脚本语言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.1.2.</span> <span class="toc-text">组成</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-number">1.2.</span> <span class="toc-text">js基础写法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.2.1.</span> <span class="toc-text">三种书写方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.2.2.</span> <span class="toc-text">js注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.2.3.</span> <span class="toc-text">js输入输出语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.2.4.</span> <span class="toc-text">js结束语</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-number">1.3.</span> <span class="toc-text">变量声明，赋值，使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.3.1.</span> <span class="toc-text">什么是变量？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.3.2.</span> <span class="toc-text">变量的声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.3.3.</span> <span class="toc-text">变量的赋值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.3.4.</span> <span class="toc-text">变量的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.3.5.</span> <span class="toc-text">变量初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.3.6.</span> <span class="toc-text">变量的本质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.3.7.</span> <span class="toc-text">变量细节补充</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.3.8.</span> <span class="toc-text">变量命名规则跟规范</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.3.9.</span> <span class="toc-text">算术运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.3.10.</span> <span class="toc-text">document.write</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.3.11.</span> <span class="toc-text">哈哈哈，我出现了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.3.12.</span> <span class="toc-text">console.log</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.3.13.</span> <span class="toc-text">转义符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.3.14.</span> <span class="toc-text">模板字符串</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-number">1.4.</span> <span class="toc-text">数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.4.1.</span> <span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.4.2.</span> <span class="toc-text">检测数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.4.3.</span> <span class="toc-text">数据类型转换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-number">1.5.</span> <span class="toc-text">自增和自减</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.5.1.</span> <span class="toc-text">自增</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.5.2.</span> <span class="toc-text">自减</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-number">1.6.</span> <span class="toc-text">比较运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-number">1.7.</span> <span class="toc-text">逻辑运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.7.1.</span> <span class="toc-text">&amp;&amp;：逻辑与</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.7.2.</span> <span class="toc-text">| | ：逻辑或</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.7.3.</span> <span class="toc-text">！ ：逻辑非</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.7.4.</span> <span class="toc-text">转换成布尔类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.7.5.</span> <span class="toc-text">转换成布尔类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.7.6.</span> <span class="toc-text">逻辑运算中的短路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.7.7.</span> <span class="toc-text">逻辑运算中的短路</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-number">1.8.</span> <span class="toc-text">赋值运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.8.1.</span> <span class="toc-text">&#x3D;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.8.2.</span> <span class="toc-text">+&#x3D;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.8.3.</span> <span class="toc-text">-&#x3D;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.8.4.</span> <span class="toc-text">*&#x3D;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.8.5.</span> <span class="toc-text">&#x2F;&#x3D;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.8.6.</span> <span class="toc-text">%&#x3D;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-number">1.9.</span> <span class="toc-text">程序结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.9.1.</span> <span class="toc-text">顺序结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.9.2.</span> <span class="toc-text">分支结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.9.3.</span> <span class="toc-text">循环结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.9.4.</span> <span class="toc-text">break和continue</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.9.5.</span> <span class="toc-text">循环嵌套</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-number">1.10.</span> <span class="toc-text">相等的一些细节</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.10.1.</span> <span class="toc-text">那么如何判断是否为NaN？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-number">1.11.</span> <span class="toc-text">数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.11.1.</span> <span class="toc-text">数组语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.11.2.</span> <span class="toc-text">数组长度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.11.3.</span> <span class="toc-text">遍历数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.11.4.</span> <span class="toc-text">动态添加数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.11.5.</span> <span class="toc-text">按顺序添加数组语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.11.6.</span> <span class="toc-text">数组内置的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.11.7.</span> <span class="toc-text">数组方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.11.8.</span> <span class="toc-text">字符串的内置方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.11.9.</span> <span class="toc-text">arguments伪数组</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-number">1.12.</span> <span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.12.1.</span> <span class="toc-text">函数介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.12.2.</span> <span class="toc-text">函数的基本使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.12.3.</span> <span class="toc-text">有参数的函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.12.4.</span> <span class="toc-text">形参和实参</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.12.5.</span> <span class="toc-text">有返回值的函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.12.6.</span> <span class="toc-text">return关键词</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.12.7.</span> <span class="toc-text">注意</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-number">1.13.</span> <span class="toc-text">构造函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.13.1.</span> <span class="toc-text">工厂函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.13.2.</span> <span class="toc-text">构造函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-number">1.14.</span> <span class="toc-text">字面量概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-number">1.15.</span> <span class="toc-text">对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.15.1.</span> <span class="toc-text">什么是对象？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.15.2.</span> <span class="toc-text">对象初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.15.3.</span> <span class="toc-text">方法的说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.15.4.</span> <span class="toc-text">对象赋值的细节</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.15.5.</span> <span class="toc-text">对象取值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.15.6.</span> <span class="toc-text">遍历对象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-number">1.16.</span> <span class="toc-text">内置对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.16.1.</span> <span class="toc-text">JS已经提供好的对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.16.2.</span> <span class="toc-text">Math对象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-number">1.17.</span> <span class="toc-text">日期对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.17.1.</span> <span class="toc-text">表示日期的对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.17.2.</span> <span class="toc-text">方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.17.3.</span> <span class="toc-text">日期对象创建时指定时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.17.4.</span> <span class="toc-text">时间戳</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-number">1.18.</span> <span class="toc-text">作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.18.1.</span> <span class="toc-text">全局作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.18.2.</span> <span class="toc-text">局部作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.18.3.</span> <span class="toc-text">块作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.18.4.</span> <span class="toc-text">全局变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.18.5.</span> <span class="toc-text">局部变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.18.6.</span> <span class="toc-text">块变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.18.7.</span> <span class="toc-text">作用域链</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.18.8.</span> <span class="toc-text">预解析以及声明的提升</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.18.9.</span> <span class="toc-text">let 和 var 的异同总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-number">1.18.10.</span> <span class="toc-text">回调函数，自执行函数</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/08/25/js/" title="js学习"><img src="/./img/qiubilong1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="js学习"/></a><div class="content"><a class="title" href="/2022/08/25/js/" title="js学习">js学习</a><time datetime="2022-08-25T15:56:16.473Z" title="发表于 2022-08-25 23:56:16">2022-08-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/24/%E4%BB%A3%E7%A0%81%E5%9D%97/%E6%BC%94%E7%A4%BA/" title="代码块演示"><img src="/./img/hs.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="代码块演示"/></a><div class="content"><a class="title" href="/2022/08/24/%E4%BB%A3%E7%A0%81%E5%9D%97/%E6%BC%94%E7%A4%BA/" title="代码块演示">代码块演示</a><time datetime="2022-08-24T13:06:07.047Z" title="发表于 2022-08-24 21:06:07">2022-08-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/24/hello-world/" title="Hello World"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2022/08/24/hello-world/" title="Hello World">Hello World</a><time datetime="2022-08-24T08:32:40.459Z" title="发表于 2022-08-24 16:32:40">2022-08-24</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By hongguojing</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
