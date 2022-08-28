@@ -232,14 +232,16 @@
   
   /* 鼠标图标 */
   body {
-    cursor: url('/img/x1.cur'), auto;
+    /* cursor: url('/img/x1.cur'), auto; */
+    cursor: url('https://www.jishusongshu.com/wp-content/uploads/2020/01/normal1.png'), auto;
   }
   a,
   [type='button']:not(:disabled),
   [type='reset']:not(:disabled),
   [type='submit']:not(:disabled),
   button:not(:disabled) {
-    cursor: url('/img/x2.cur'), auto !important;
+    /* cursor: url('/img/x2.cur'), auto !important; */
+    cursor: pointer, auto !important;
   }
   /* md网站下划线 */
   #article-container a:hover {
