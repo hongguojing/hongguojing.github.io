@@ -371,4 +371,23 @@
   #article-container figure.highlight {
     border-radius: 10px;
   }
+
+  /* 精简侧栏时钟：仅保留日期和时间 */
+  .card-clock .card-clock-weather,
+  .card-clock .card-clock-humidity,
+  .card-clock .card-clock-ip,
+  .card-clock .card-clock-location,
+  .card-clock #card-clock-dackorlight {
+    display: none !important;
+  }
+
+  .card-clock .clock-row {
+    justify-content: center;
+  }
+
+  .card-clock .card-clock-clockdate,
+  .card-clock .card-clock-time {
+    flex-basis: auto;
+    text-align: center;
+  }
   
